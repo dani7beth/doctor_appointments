@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_date: 2020-11-19 15:39:55
+  doctor: one
+  user: one
+
+two:
+  appointment_date: 2020-11-19 15:39:55
+  doctor: two
+  user: two
