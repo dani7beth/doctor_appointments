@@ -1,0 +1,6 @@
+<h1>Add User</h1>
+<%=form_with(model: @user, local:true) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true, placeholder: "Name" %>
+    <%=f.submit nil%>
+<% end %>
