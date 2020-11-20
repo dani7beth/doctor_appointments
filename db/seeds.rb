@@ -7,7 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 users = []
 doctors = []
-
+ Users.detroy
+ Doctor.destroy
+ Appointment.destroy
 
 20.times do |i|
     users << User.create(name: Faker::FunnyName.two_word_name)
