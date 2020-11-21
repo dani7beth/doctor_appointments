@@ -6,10 +6,10 @@ class DoctorsController < ApplicationController
 
   def show
     @doctor = Doctor.find(params[:id])
-    @checkups = @doctor.appointments.where(condition: "Routine Checkup")
-    @vaccines = @doctor.appointments.where(condition: "Vaccination")
-    @walkins = @doctor.appointments.where(condition: "Walk-In")
-    @procedures = @doctor.appointments.where(condition: "In-Patient Procedure")
+    @checkups = @doctor.appointments.where(condition: 'Routine Checkup')
+    @vaccines = @doctor.appointments.where(condition: 'Vaccination')
+    @walkins = @doctor.appointments.where(condition: 'Walk-In')
+    @procedures = @doctor.appointments.where(condition: 'In-Patient Procedure')
   end
 
   def new

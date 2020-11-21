@@ -1,2 +1,13 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+<h1><%= @doctor.name %>: Appointments</h1>
+<hr />
+<%= 
+form_with( model: [@doctor, @appointment], local:true, class:'ui form') do |f|%>
+<%= f.label :user%>
+<%= f.select :user_id, @users.collect{ |u| [u.name, u.id]}%>
+<%= f.label :condition%>
+<%= f.select :condition, ["Routine Checkup", "Vaccination", "Walk-In", "In-Patient Procedure"]%>
+<%= f.label :appointment_date%>
+<%= f.datetime_select :appointment_date, min: 1.days.from_now, max: 6.months.from_now, :discard_seconds => true%>
+<br />
+<%= f.submit nil, class:'ui green button'%>
+<% end %>
