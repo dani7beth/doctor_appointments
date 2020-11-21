@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 users = []
 doctors = []
+condition = ['Routine Checkup', 'Vaccination', 'Walk-In', 'In-Patient Procedure'] #this should be reason for visit but i named it "condition" in db  
  User.destroy_all
 
 20.times do |i|
@@ -18,8 +19,9 @@ end
 end
 
 doctors.each do |doctor|
-    7.times do #lets make each doctor have 7 patients
-        doctor.appointments.create(appointment_date: Faker::Date.between(from:'2020-11-19', to:'2021-11-19'),
+    7.times do #lets make each doctor have 7 patients                   #year  #month     #day          #hour        #minute             
+        doctor.appointments.create(appointment_date: (DateTime.new(2020,rand(1...12),rand(1...28),rand(1...24),rand(1...60))),
+                                   condition: condition.sample,
                                    doctor_id: doctors.sample.id,
                                    user_id: users.sample.id)
     end

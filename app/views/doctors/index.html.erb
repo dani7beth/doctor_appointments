@@ -1,5 +1,4 @@
 <h1>Doctors</h1>
-<%=link_to 'Add Doctor', new_doctor_path%>
 <hr />
 <h2><%= @doctors.length <= 0 ? 'No Doctors' : ''%></h2>
 <ul>
@@ -7,3 +6,7 @@
 <li><%=link_to "Dr. #{doctor.name}", doctor%></li>
 <% end %>
 </ul>
+<br />
+<br />
+<br />
+<%=link_to 'Add Doctor', new_doctor_path%>

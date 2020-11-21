@@ -1,7 +1,8 @@
 class AppointmentsController < ApplicationController
   def index
-    @appointments = Appointment.where(doctor_id: params[:doctor_id])
     @doctor = Doctor.find(params[:doctor_id])
+    @appointments = Appointment.where(doctor_id: params[:doctor_id])
+   
   end
 
   def new

@@ -1,7 +1,64 @@
-<h1><%=@doctor.name%></h1>
+<h1>Dr. <%=@doctor.name%></h1>
+<h2>Appointments</h2>
+<%= link_to 'Make Appointment', new_doctor_appointment_path(@doctor)%>
 <hr />
 <br />
-<%=link_to 'Appointments', doctor_appointments_path(@doctor), class: 'ui primary button inverted'%>
+<%#link_to 'Appointments', doctor_appointments_path(@doctor), class: 'ui primary button inverted'%>
+<h3>Routine Checkups</h3>
+<ul>
+<% @checkups.each do |checkup|%>
+<br />
+<li>
+Date: <%= checkup.appointment_date.strftime("%B %d, %Y")%>
+<br />
+Time: <%= checkup.appointment_date.strftime("%l:%M %p")%>
+<br />
+<%= link_to 'Cancel', doctor_appointment_path(@doctor, checkup), method: :delete%>
+</li>
+<%end%>
+</ul>
+<hr />
+<h3>Vaccinations</h3>
+<ul>
+<% @vaccines.each do |vaccine|%>
+<br />
+<li>
+Date: <%= vaccine.appointment_date.strftime("%B %d, %Y")%>
+<br />
+Time: <%= vaccine.appointment_date.strftime("%l:%M %p")%>
+<br />
+<%= link_to 'Cancel', doctor_appointment_path(@doctor, vaccine), method: :delete%>
+</li>
+<%end%>
+</ul>
+<hr />
+<h3>Walk-In's</h3>
+<ul>
+<% @walkins.each do |walkin|%>
+<br />
+<li>
+Date: <%= walkin.appointment_date.strftime("%B %d, %Y")%>
+<br />
+Time: <%= walkin.appointment_date.strftime("%l:%M %p")%>
+<br />
+<%= link_to 'Cancel', doctor_appointment_path(@doctor, walkin), method: :delete%>
+</li>
+<%end%>
+</ul>
+<hr />
+<h3>In-Patient Procedures</h3>
+<ul>
+<% @procedures.each do |procedure|%>
+<br />
+<li>
+Date: <%= procedure.appointment_date.strftime("%B %d, %Y")%>
+<br />
+Time: <%= procedure.appointment_date.strftime("%l:%M %p")%>
+<br />
+<%= link_to 'Cancel', doctor_appointment_path(@doctor, procedure), method: :delete%>
+</li>
+<%end%>
+</ul>
 <br />
 <br />
 <br />
