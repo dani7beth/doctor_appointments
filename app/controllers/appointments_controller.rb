@@ -2,6 +2,10 @@ class AppointmentsController < ApplicationController
   def index
     @doctor = Doctor.find(params[:doctor_id])
     @appointments = Appointment.where(doctor_id: params[:doctor_id])
+    # @checkups = @doctor.appointments.where(condition: 'Routine Checkup')
+    # @vaccines = @doctor.appointments.where(condition: 'Vaccination')
+    # @walkins = @doctor.appointments.where(condition: 'Walk-In')
+    # @procedures = @doctor.appointments.where(condition: 'In-Patient Procedure')
    
   end
 
