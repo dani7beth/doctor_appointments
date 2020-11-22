@@ -1,1 +1,82 @@
-#do nothing!
+<%# #list all appointments
+    #maybe just show the doctor name and the reasons for visit for confidentiality%>
+
+<h1>Appointments</h1>
+<br />
+<hr />
+
+<h3>Routine Checkups</h3>
+<%#lets sort the appointments by the first%>
+<% @checkups = @checkups.order(appointment_date: :asc)%>
+<% @checkups.each do |checkup| %>
+<ul>
+<li>
+  Date: <%= checkup.appointment_date.strftime("%B %d, %Y")%>
+  <br />
+  Time: <%=checkup.appointment_date.strftime("%l:%M %p")%>
+  <br />
+  Doctor:<%= Doctor.find(checkup.doctor_id).name%>
+  <br />
+  <br />
+</li>
+</ul>
+<% end %>
+<br />
+<br />
+<hr />
+<h3>Vaccinations</h3>
+<%#lets sort the appointments by the first%>
+<% @vaccines = @vaccines.order(appointment_date: :asc)%>
+<% @vaccines.each do |vaccine| %>
+<ul>
+<li>
+  Date: <%= vaccine.appointment_date.strftime("%B %d, %Y")%>
+  <br />
+  Time: <%=vaccine.appointment_date.strftime("%l:%M %p")%>
+  <br />
+  Doctor:<%= Doctor.find(vaccine.doctor_id).name%>
+  <br />
+  <br />
+</li>
+</ul>
+<% end %>
+<br />
+<br />
+<hr /><h3>Walk-In's</h3>
+<%#lets sort the appointments by the first%>
+<% @walkins = @walkins.order(appointment_date: :asc)%>
+<% @walkins.each do |walkin| %>
+<ul>
+<li>
+  Date: <%= walkin.appointment_date.strftime("%B %d, %Y")%>
+  <br />
+  Time: <%=walkin.appointment_date.strftime("%l:%M %p")%>
+  <br />
+  Doctor:<%= Doctor.find(walkin.doctor_id).name%>
+  <br />
+  <br />
+</li>
+</ul>
+<% end %>
+<br />
+<br />
+<hr />
+<h3>In-Patient Procedures</h3>
+<%#lets sort the appointments by the first%>
+<% @procedures = @procedures.order(appointment_date: :asc)%>
+<% @procedures.each do |procedure| %>
+<ul>
+<li>
+  Date: <%= procedure.appointment_date.strftime("%B %d, %Y")%>
+  <br />
+  Time: <%=procedure.appointment_date.strftime("%l:%M %p")%>
+  <br />
+  Doctor:<%= Doctor.find(procedure.doctor_id).name%>
+  <br />
+  <br />
+</li>
+</ul>
+<% end %>
+<br />
+<br />
+<hr />
