@@ -14,6 +14,48 @@
  *= require_self
  */
  @import "semantic-ui";
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Ubuntu&display=swap');
+// Color Pallete
+//blue button color: #2185D0
+// red button color: #DB2828;
+//green button color: #21BA45
+
+// #f9f7f7 -white
+// #dbe2ef -white/gray
+// #3f72af -light blue
+// #112d4e -dark blue
+$primary-color: #f9f7f7;
+$font-color: #112d4e;
+$panel-color: #3f72af;
+
+body{
+    background-color: $primary-color;
+    color: $font-color;
+}
+h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+}
+h3{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+}
+ ul{
+     list-style-type: none;
+     
+ }
+ li{
+     display: inline;
+     padding: 10px;
+ }
+
+ #title{
+     padding: 15%;
+     
+ }
+ #cta{
+     padding: 7%;
+ }
 
  
  

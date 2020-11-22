@@ -4,6 +4,8 @@
 <br /> <%= link_to 'Create Appointment', doctors_path%></p>
 <hr />
 <ul>
+<%#order appointments by date%>
+<%@user.appointments.order(appointment_date: :asc)%>
 <%@user.appointments.each do |user| %>
 <li>
   Date: <%= user.appointment_date.strftime("%B %d, %Y")%>
@@ -23,4 +25,5 @@
 <br />
 <br />
 <br />
+<%= link_to 'Edit Patient', edit_user_path(@user.id),method: :get, class: 'ui blue button inverted'%>
 <%= link_to 'Delete Patient', @user, method: :delete, class: 'ui red button inverted' %>
