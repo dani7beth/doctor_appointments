@@ -4,5 +4,6 @@
 </section>
 <section id="cta">
 <h2>New Patient?</h2>
-<%= button_to 'New Patient', new_user_path, method: :get%> <%#have to specify get otherwise it will try to post%>
+<%= link_to 'New Patient', new_user_path, method: :get, class: 'ui blue button'%> 
+<%#have to specify get otherwise it will try to post%>
 </section>

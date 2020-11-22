@@ -24,6 +24,19 @@ class AppointmentsController < ApplicationController
       render :new
     end
   end
+ #maybe a patient should be able to update their appointment if needed
+  # def edit
+  #   @appointment = Appointment.find(params[:id])
+  # end
+
+  # def update
+  #   @appointment = Appointment.find(params[:id])
+  #   if @appointment.update(appointment_params)
+  #     redirect_to appointments_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @doctor = Doctor.find(params[:doctor_id])

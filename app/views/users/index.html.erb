@@ -2,7 +2,10 @@
 <hr />
 <ul>
 <% @users.each do |user|%>
-    <li><%=link_to user.name, user%></li>
+    <li><%=link_to user.name, user%>
+    <br />
+    <%=button_to 'edit', edit_user_path(user.id),method: :get%></li>
+    <br />
 <% end %>
 </ul>
 <br />

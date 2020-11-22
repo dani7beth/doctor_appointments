@@ -62,4 +62,5 @@ Time: <%= procedure.appointment_date.strftime("%l:%M %p")%>
 <br />
 <br />
 <br />
+<%=link_to 'Edit Doctor', edit_doctor_path(@doctor.id),method: :get, class: 'ui blue button inverted'%>
 <%=link_to 'Delete Doctor', @doctor, method: :delete, class: 'ui red button inverted'%>
